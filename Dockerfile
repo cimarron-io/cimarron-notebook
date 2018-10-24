@@ -1,7 +1,7 @@
 ARG BASE_CONTAINER=jupyter/scipy-notebook
 FROM $BASE_CONTAINER
 
-LABEL maintainer="Chekos <sergio@cimarron.io>"
+LABEL maintainer="chekos <sergio@cimarron.io>"
 
 USER root
 
