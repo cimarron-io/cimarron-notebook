@@ -19,7 +19,7 @@ RUN conda install --quiet --yes \
     # create jupyter_notebook_config.py
     jupyter notebook --generate-config -y && \
     # clone templates into template directory
-    git clone https://github.com/chekos/nb_templates.git .jupyter/ && \
+    git clone https://github.com/chekos/nb_templates.git .jupyter/nb_templates && \
     # add directory path to notebook config file
-    echo "c.JupyterLabTemplates.template_dirs = ['.jupyter/nb_templates']"
+    echo "c.JupyterLabTemplates.template_dirs = ['.jupyter/nb_templates/nb_templates']"
 
