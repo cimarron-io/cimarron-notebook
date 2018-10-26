@@ -10,6 +10,7 @@ RUN conda install --quiet --yes \
     'altair' \ 
     'vega' \
     'vega_datasets' && \
+    'pandas-profiling' && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -typsy && \
     pip install jupyterlab_templates && \
@@ -19,7 +20,7 @@ RUN conda install --quiet --yes \
     # create jupyter_notebook_config.py
     jupyter notebook --generate-config -y && \
     # clone templates into template directory
-    git clone https://github.com/chekos/nb_templates.git .jupyter/nb_templates && \
+    git clone https://github.com/chekos/nb_templates.git home/$NB_USER/.jupyter/nb_templates && \
     # add directory path to notebook config file
-    echo "c.JupyterLabTemplates.template_dirs = ['.jupyter/nb_templates/nb_templates']" >> .jupyter/jupyter_notebook_config.py
+    echo "c.JupyterLabTemplates.template_dirs = ['home/$NB_USER/.jupyter/nb_templates/nb_templates']" >> home/$NB_USER/.jupyter/jupyter_notebook_config.py
 
