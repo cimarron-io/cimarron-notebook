@@ -3,7 +3,7 @@ FROM $BASE_CONTAINER
 
 LABEL maintainer="chekos <sergio@cimarron.io>"
 
-USER root
+USER $NB_UID
 
 # Install other packages
 RUN conda install --quiet --yes \
