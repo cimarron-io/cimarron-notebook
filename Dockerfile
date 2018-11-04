@@ -9,8 +9,8 @@ USER $NB_UID
 RUN conda install --quiet --yes \
     'altair' \ 
     'vega' \
-    'vega_datasets' && \
-    'jupyterlab' && \
+    'vega_datasets' \
+    'jupyterlab=0.35.*' && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -typsy && \
     pip install jupyterlab_templates && \
