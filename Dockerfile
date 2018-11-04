@@ -10,12 +10,15 @@ RUN conda install --quiet --yes \
     'altair' \ 
     'vega' \
     'vega_datasets' && \
+    'jupyterlab=0.35.2' && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -typsy && \
     pip install jupyterlab_templates && \
     # enable jupyterlab_templates extension
     jupyter labextension install jupyterlab_templates && \
     jupyter serverextension enable --py jupyterlab_templates && \
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.38.0 && \
+    jupyter labextension install @jupyterlab/hub-extension@^0.12.0 && \
     # create jupyter_notebook_config.py
     jupyter notebook --generate-config -y && \
     # clone templates into template directory
