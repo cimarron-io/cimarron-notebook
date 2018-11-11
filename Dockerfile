@@ -19,6 +19,9 @@ RUN conda install --quiet --yes \
     jupyter serverextension enable --py jupyterlab_templates && \
     jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.38.0 && \
     jupyter labextension install @jupyterlab/hub-extension@^0.12.0 && \
+    # clean installation and build jupyterlab
+    jupyter lab build \
+    #jupyter lab clean \
     # create jupyter_notebook_config.py
     jupyter notebook --generate-config -y && \
     # clone templates into template directory
