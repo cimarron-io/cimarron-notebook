@@ -16,11 +16,11 @@ RUN conda install --quiet --yes \
     pip install jupyterlab_templates && \
     # enable jupyterlab_templates extension
     jupyter labextension install jupyterlab_templates && \
-    jupyter serverextension enable --py jupyterlab_templates && \
+    jupyter serverextension enable --py jupyterlab_templates --sys-prefix && \
     jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.38.0 && \
     jupyter labextension install @jupyterlab/hub-extension@^0.12.0 && \
     # clean installation and build jupyterlab
-    jupyter lab build \
+    jupyter lab build && \
     #jupyter lab clean \
     # create jupyter_notebook_config.py
     jupyter notebook --generate-config -y && \
